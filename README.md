@@ -20,6 +20,14 @@ Add the flake as an input:
 }
 ```
 
+While this repo is private, `github:` cannot fetch it unless Nix has a token
+(`access-tokens = github.com=ghp_…` in `nix.conf`). Either make the repo
+public, or point the input at SSH instead:
+
+```nix
+inputs.claude-notify.url = "git+ssh://git@github.com/Kiki-Gen/claude-notify";
+```
+
 Import the module wherever your home-manager config lives, and turn it on:
 
 ```nix
