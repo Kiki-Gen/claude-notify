@@ -71,12 +71,12 @@ programs.claude-code.notifySound.player = "${pkgs.pulseaudio}/bin/paplay";
 programs.claude-code.notifySound.sound = ./my-clip.wav;
 ```
 
-The bundled clip is trimmed to peak at −25 dB, which is audible without being
+The bundled clip is trimmed to peak at −32 dB, which is audible without being
 startling on a quiet desk. `assets/claude_notify_master.wav` is the untouched
 −1.2 dB trim, kept so the level can be re-dialled on a fresh machine:
 
 ```sh
-ffmpeg -i assets/claude_notify_master.wav -af volume=-23.8dB \
+ffmpeg -i assets/claude_notify_master.wav -af volume=-30.8dB \
   -c:a pcm_s16le assets/claude_notify.wav
 ```
 

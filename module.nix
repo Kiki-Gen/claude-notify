@@ -96,12 +96,12 @@ in
       default = ./assets/claude_notify.wav;
       defaultText = lib.literalExpression "./assets/claude_notify.wav";
       description = ''
-        Audio file to play. The bundled clip peaks at -25 dB;
+        Audio file to play. The bundled clip peaks at -32 dB;
         {file}`assets/claude_notify_master.wav` is the untouched -1.2 dB trim,
         kept so the level can be re-dialled:
 
         ```
-        ffmpeg -i assets/claude_notify_master.wav -af volume=-23.8dB \
+        ffmpeg -i assets/claude_notify_master.wav -af volume=-30.8dB \
           -c:a pcm_s16le assets/claude_notify.wav
         ```
       '';
